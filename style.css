@@ -50,6 +50,7 @@ section {
     text-transform: uppercase;
 }
 
+
 .section__title {
     font-size: 48px;
     font-weight: 900;
@@ -73,6 +74,7 @@ main {
 button {
     cursor: pointer;
     font-family: 'Inter', system-ui;
+    border: none;
 }
 
 .btn {
@@ -330,6 +332,10 @@ FEATURES ↓
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#features .section__title, #pricing .section__title {
+    text-align: center;
 }
 
 #features .section__para {
@@ -617,6 +623,10 @@ PRICING ↓
     align-items: center;
 }
 
+#pricing .section__para {
+    max-width: 576px;
+    text-align: center;
+}
 
 .plans {
     display: flex;
@@ -624,6 +634,14 @@ PRICING ↓
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
+}
+
+.plans__blob {
+    z-index: -10;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateX(-50%) translateY(50) scaleX(1) scaleY(1);
 }
 
 .plan {
@@ -649,6 +667,11 @@ PRICING ↓
     background: linear-gradient(115deg, rgb(56, 178, 172) 0%, rgb(129, 230, 217) 100%);
 }
 
+.plan:nth-child(1) .plan__middle, .plan:nth-child(3) .plan__middle {
+    border-top: 2px solid rgb(229, 231, 235);
+    border-bottom: 2px solid rgb(229, 231, 235);
+}
+
 .plan:nth-child(odd) .plan__name, .plan:nth-child(odd) .plan__price, .plan:nth-child(odd) .plan__target {
     color: 1a202c;
 }
@@ -657,13 +680,32 @@ PRICING ↓
     color: #a0aec0;
 }
 
-.plan:nth-child(1) .plan__middle, .plan:nth-child(3) .plan__middle {
-    border-top: 2px solid rgb(229, 231, 235);
-    border-bottom: 2px solid rgb(229, 231, 235);
-}
-
 .plan:nth-child(odd) .plan__name, .plan:nth-child(odd) .plan__price, .plan:nth-child(odd) .plan__target {
     color: #1a202c;
+}
+
+.plan:nth-child(2) .plan__name, .plan:nth-child(2) .plan__price, .plan:nth-child(2) .plan__target, .plan:nth-child(2) .plan__duration, .plan:nth-child(2) .plan__feature {
+    color: #f7fafc
+}
+
+.plan:nth-child(2) {
+    background: linear-gradient(135deg, rgb(76, 81, 191) 0%, rgb(102, 126, 234) 100%);
+}
+
+.plan:nth-child(2) .plan__middle {
+    border-top: 2px solid rgb(102, 126, 234);
+    border-bottom: 2px solid rgb(102, 126, 234);
+}
+
+.plan:nth-child(3)
+ .plan__stripe, .plan:nth-child(3) .plan__button {
+    color: #f7fafc;
+    background: linear-gradient(115deg, rgb(245, 101, 101) 0%, rgb(254, 178, 178) 100%);
+ }
+
+.plan:nth-child(3) .plan__middle, .plan:nth-child(3) .plan__middle {
+    border-top: 2px solid rgb(229, 231, 235);
+    border-bottom: 2px solid rgb(229, 231, 235);
 }
 
 .plan__stripe {
@@ -696,7 +738,7 @@ PRICING ↓
 
 .plan__duration {
     font-size: 16px;
-    letter-spacing: 1.625;
+    letter-spacing: 0.1em;
 }
 
 .plan__name, .plan__price, .plan__duration {
@@ -726,6 +768,31 @@ PRICING ↓
     margin-top: 20px;
     font-weight: 500;
 }
+
+.plan__bottom {
+    padding-bottom: 4rem;
+    padding-top: 4rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.plan__button {
+    border-radius: 0.25rem;
+    background-color: rgb(100, 21, 255);
+    padding: 0.75rem 2rem;
+    font-weight: 700;
+    color: rgb(247 250 252);
+    transition: all 300ms ease;
+    width: 100%;
+    border-radius: 9999px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+
 
 /* 
 
@@ -796,6 +863,15 @@ MOBILE RESPONSIVENESS ↓
 
     .header__img {
         max-width: 512px;
+    }
+
+    .plan__bottom {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .plan__button {
+        max-width: none;
     }
 }
 
