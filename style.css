@@ -1160,9 +1160,6 @@ footer {
 
 }
 
-.footer__copyright, .footer__socials {
-    justify-content: right;
-}
 
 .footer__socials {
     display: flex;
@@ -1180,6 +1177,7 @@ footer {
     z-index: 2;
     cursor: pointer;
     transition: all 300ms ease;
+    align-items: center;
 }
 
 .footer__social--link svg {
