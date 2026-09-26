@@ -861,11 +861,8 @@ TESTIMONIALS ↓
     font-weight: 900;
 }
 
-.fa-star {
-    --fa: "\f005";
-}
 
-.fa-solid .fa-star {
+.fa-solid, .fa-star {
     color: rgba(246, 173, 85);
     display: inline-block;
     height: 1.25rem;
@@ -936,6 +933,15 @@ TESTIMONIALS ↓
     border-radius: 50%;
     margin: 0 12px;
     transition: all 300ms ease;
+}
+
+.testimonial__button:hover {
+    background-color: rgb(229, 231, 235);
+}
+
+.testimonial__button svg {
+    width: 16px;
+    height: 16px;
 }
 
 /* 
@@ -1012,7 +1018,7 @@ START / CALL TO ACTION ↓
 
 .start__button:nth-child(1) {
     background: #f56565;
-    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px; rgba:var(--fa)(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px; rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
     margin-right: 32px;
     transition: all 300ms ease;
 }
@@ -1028,7 +1034,7 @@ START / CALL TO ACTION ↓
 
 .start__button:hover:nth-child(2) {
     background-color: rgba(247, 250, 252);
-    transition: all 300ms ease;
+    color: rgba(100, 21, 255);
 }
 
 .start__button {
@@ -1150,6 +1156,12 @@ footer {
 .footer__copyright {
     color: #cbd5e0;
     font-weight: 500;
+    text-align: center;
+
+}
+
+.footer__copyright, .footer__socials {
+    justify-content: right;
 }
 
 .footer__socials {
@@ -1168,6 +1180,11 @@ footer {
     z-index: 2;
     cursor: pointer;
     transition: all 300ms ease;
+}
+
+.footer__social--link svg {
+    width: 16px;
+    height: 16px;
 }
 
 .footer__social--link:hover {
